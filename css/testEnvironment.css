@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global */
+
+* {
+	font-family: Roboto;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+#startPage, #examPage {
+	position: fixed;
+	width: 100%; height: 100%;
+	top: 0; left: 0;
+	background: white;
+}
+
+input[type="button"] {
+	cursor: pointer;
+}
+
+
+/* Test Environment */
+
+#examPage {
+    display: none;
+    flex-direction: column;
+}
+
+#topBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; align-items: center;
+    padding: .75rem;
+    border-bottom: 1px solid gray;
+}
+
+#questionsBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: left; align-items: center;
+    gap: 1.25rem;
+}
+
+.questionCircle {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: .75rem;
+    border-radius: 1rem;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center; justify-content: center;
+    border: 2px solid gray;
+    font-weight: bold;
+	cursor: pointer;
+}
+
+.questionCircle.filled {
+    background-color: rgb(0 152 255);
+    border: 2px solid rgb(118 199 255);
+    color: white;
+}
+
+#infoBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: right; align-items: center;
+    gap: .75rem;
+}
+
+#timeLeft {
+    font-weight: bold;
+    padding: .5rem;
+}
+
+#submitQuestions {
+    border: none;
+    background: var(--buttonColor);
+    color: white;
+    padding: .3rem .6rem;
+    border-radius: 5rem;
+}
+
+#currentQuestion {
+    color: gray;
+}
+
+content {
+    width: 100%; height: --webkit-fill-available;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left; align-items: top;
+    padding: 1rem;
+}
+
+#questionNumberBar {
+    padding: 1rem;
+}
+
+#imageHolder {
+    padding: 1rem;
+    display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+#questionText {
+    padding: 1rem;
+	word-wrap: break-word;
+	width: 100%;
+	height: max-content;
+}
+
+#answerOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: left; align-items: top;
+    padding: 0rem 1rem;
+	gap: .5rem;
+}
+
+#answerChoice1, #answerChoice2, #answerChoice3, #answerChoice4, #answerChoice5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: left; align-items: center;
+	gap: 2rem;
+	padding: 1.5rem;
+	cursor: pointer;
+}
+
+div[name="answerChoices"] {
+    padding: .5rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    width: 1.5rem; height: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; align-items: center;
+    font-weight: bold;
+}
+
+div[name="answerChoices"].selected {
+    background-color: rgb(0 152 255);
+    color: white;
+    border: none;
+}
+
+#choice1Description, #choice2Description, #choice3Description, #choice4Description, #choice5Description {
+    width: 90%;
+    text-align: left;
+    height: max-content;
+    word-wrap: break-word;
+}
+
+#switchQuestions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    padding: .5rem;
+    background: white;
+    border-radius: 2rem;
+    border: 1px solid lightgray;
+    gap: .75rem;
+}
+
+#previousQuestion,#nextQuestion {
+    background-color: rgb(0 152 255);
+	color: white;
+    border: none;
+    padding: 1rem;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+}
+
+#previousQuestion.locked, #nextQuestion.locked {
+	background-color: lightgray;
+	color: black;
+}
+
+div#answerFeedback {
+    position: absolute;
+    width: 20rem;
+    background: white;
+    padding: .5rem;
+    border-radius: 5rem;
+    border: 1px solid gray;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(calc(-25% - 5rem));
+    text-align: center;
+}
+
+.incorrect {
+	background-color: rgba(255,0,0,0.1);
+	border: 2px solid rgb(255,0,0);
+}
+
+.correct {
+	background-color: rgba(0,255,0,0.1);
+	border: 2px solid rgb(0,255,0);
+}
+
+img#mainImage {
+    width: auto;
+    max-width: 85%;
+    height: auto;
+}
+
+div#lessThan5Minutes {
+    width: 100%;
+    text-align: center;
+    padding: .3rem;
+    font-size: 1.2rem;
+    background-color: rgba(255,0,0,0.25);
+    font-weight: 500;
+	display :none;
+}
+
+
+#timeLeft.lessThan5Minutes {
+    background-color: rgba(255,0,0,0.25);
+}

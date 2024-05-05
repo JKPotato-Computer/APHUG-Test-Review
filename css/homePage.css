@@ -1,0 +1,149 @@
+:root {
+    --buttonColor: #324dc7;
+    --buttonHover: #192764;
+}
+
+#createTestPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: .5rem;
+}
+
+#testCategories {
+    padding: .5rem;
+    border-radius: .4rem;
+    border: 1px solid gray;
+    width: 15rem;
+}
+
+#testQuestionNo {
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid gray;
+    width: 15rem;
+}
+
+#startTest {
+    padding: .6rem;
+    border: none; border-radius: 2rem;
+    background-color: var(--buttonColor); color: white;
+    width: 12rem;
+    font-size: 1.15rem;
+    transition: .2s linear;
+}
+
+#startTest:hover {
+    background-color: var(--buttonHover);
+}
+
+#startPage {
+    display: grid;
+    grid-template-rows: 1fr; grid-template-columns: 1fr 3fr;
+}
+
+#optionPages {
+    position: relative;
+}
+
+.fullScreen {
+    position: absolute;
+    left: 0; top: 0;
+    padding: 1rem;
+    height: 100%;
+    width: inherit;
+}
+
+#title {
+    background: black;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    padding: .75rem;
+    font-weight: bold;
+    grid-area: title;
+}
+
+#leftNav {
+    display: grid;
+    grid-template-areas: "title title" 
+                         "leftNav rightNav";
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 1fr 2fr;
+}
+
+#verticalHolder {
+    grid-area: leftNav;
+    background-color: rgb(0, 119, 200);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+#startNewTest, #testHistory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center; gap: .5rem;
+    width: 100%; height: 6rem;
+    cursor: pointer;
+}
+
+#startNewTest:hover, #testHistory:hover {
+    background-color: rgb(1, 92, 176);
+}
+
+#startNewTest span, #testHistory span {
+    color: white;
+}
+
+.optionSelected {
+    background-color: rgb(1, 92, 176);
+}
+
+.optionSelected :nth-child(2) {
+    text-decoration: underline;
+}
+
+#startNewTest :nth-child(2), #testHistory :nth-child(2) {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+#sideBar {
+    grid-area: rightNav;
+    background-color: rgb(238, 247, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: left;
+}
+
+#sideBar > div > div {
+    padding:  .8rem;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+#sideBar > div > div:hover {
+    background-color: rgba(0, 119, 200, 0.1);
+}
+
+#sideBar > div > div.selected {
+    background-color: rgba(0, 119, 200, 0.1);
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  #startPage {
+      grid-template-rows: 2rem 1fr; grid-template-columns: 1fr;
+  }
+}
+#warning {
+	background: yellow;
+	text-align: center;
+	font-weight: bold;
+}
