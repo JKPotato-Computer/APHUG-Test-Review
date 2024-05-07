@@ -2409,7 +2409,7 @@ const database = (function() {
 					"Terracing in highland terrain",
 					"Seed hybrids and animal breeds"
 				],
-				"Correct": "Seed hybrids and animal breeds"
+				"Correct": "Chemical fertilizers and pesticides"
 			}
 		],
 		[ // Unit 6
