@@ -129,6 +129,7 @@ const handler = (function() {
 			case "semester2":
 				testSections = [3,4,5];
 				break;
+				
 		}
 		
 		console.log(testSections);
