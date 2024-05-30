@@ -3,7 +3,7 @@
 const handler = (function() {
 	
 	/* Configuration */
-	var testSections = [0,1,2];
+	var testSections = [3,4,5];
 	var noOfQuestions = 20;
 	
 	/* Active Test */
