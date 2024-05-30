@@ -126,6 +126,9 @@ const handler = (function() {
 			case "full":
 				testSections = [0,1,2,3,4,5];
 				break;
+			case "semester2":
+				testSections = [3,4,5];
+				break;
 		}
 		
 		console.log(testSections);
